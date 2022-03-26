@@ -2,7 +2,7 @@ from os.path import dirname, abspath
 from os import getenv
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from routers import test_router, search_router
 import logging
 from utils.custom_logger import CustomizeLogger
@@ -40,7 +40,7 @@ app.add_middleware(
 )
 
 @app.exception_handler(CustomException)
-async def unicorn_exception_handler(execption: CustomException):
+async def custom_exception_handler(request: Request, execption: CustomException):
     return JSONResponse(
         status_code=400,
         content={"message": execption.message},
