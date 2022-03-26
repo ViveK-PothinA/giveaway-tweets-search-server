@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+gunicorn
+uvloop
+httptools
+motor
+pymongo
+vaderSentiment
+pymongo[srv]
