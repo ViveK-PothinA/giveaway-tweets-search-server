@@ -6,4 +6,5 @@ httptools
 motor
 pymongo
 vaderSentiment
+loguru
 pymongo[srv]
